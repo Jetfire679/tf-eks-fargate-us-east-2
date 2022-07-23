@@ -139,19 +139,19 @@ resource "kubernetes_service" "app" {
 #     }
 #   }
 
-  spec {
-    rule {
-      http {
-        path {
-          path = "/*"
-          backend {
-            service_name = "service-2048"
-            service_port = 80
-          }
-        }
-      }
-    }
-  }
+#   spec {
+#     rule {
+#       http {
+#         path {
+#           path = "/*"
+#           backend {
+#             service_name = "service-2048"
+#             service_port = 80
+#           }
+#         }
+#       }
+#     }
+#   }
 
-  depends_on = [kubernetes_service.app]
-}
+#   depends_on = [kubernetes_service.app]
+# }
