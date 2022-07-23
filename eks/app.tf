@@ -125,19 +125,19 @@ resource "kubernetes_service" "app" {
   depends_on = [kubernetes_deployment.app]
 }
 
-resource "kubernetes_ingress" "app" {
-  metadata {
-    name      = "2048-ingress"
-    namespace = "2048-game"
-    annotations = {
-      "kubernetes.io/ingress.class"           = "alb"
-      "alb.ingress.kubernetes.io/scheme"      = "internet-facing"
-      "alb.ingress.kubernetes.io/target-type" = "ip"
-    }
-    labels = {
-        "app" = "2048-ingress"
-    }
-  }
+# resource "kubernetes_ingress" "app" {
+#   metadata {
+#     name      = "2048-ingress"
+#     namespace = "2048-game"
+#     annotations = {
+#       "kubernetes.io/ingress.class"           = "alb"
+#       "alb.ingress.kubernetes.io/scheme"      = "internet-facing"
+#       "alb.ingress.kubernetes.io/target-type" = "ip"
+#     }
+#     labels = {
+#         "app" = "2048-ingress"
+#     }
+#   }
 
   spec {
     rule {

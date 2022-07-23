@@ -232,10 +232,10 @@ data "template_file" "kubeconfig" {
   }
 }
 
-resource "local_file" "kubeconfig" {
-  content  = data.template_file.kubeconfig.rendered
-  filename = pathexpand("${var.kubeconfig_path}/config")
-}
+# resource "local_file" "kubeconfig" {
+#   content  = data.template_file.kubeconfig.rendered
+#   filename = pathexpand("${var.kubeconfig_path}/config")
+# }
 
 output "kubectl_config" {
   description = "Path to new kubectl config file"
