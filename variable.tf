@@ -1,0 +1,3 @@
+variable "vCreateVpc" {
+  type = string
+}
