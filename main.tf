@@ -2,6 +2,7 @@
 provider "aws" {
   version = "~> 2.44"
   region  = var.region
+  profile = "default"
 }
 
 module "vpc" {
